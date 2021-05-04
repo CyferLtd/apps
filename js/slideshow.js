@@ -1,16 +1,18 @@
-var slideIndex = [1,1,1];
-var slideId = ["mySlides1", "mySlides2", "mySlides3"]
-var dotId = ["dot1", "dot2", "dot3"]
+var slideIndex = [1,1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"]
+var dotId = ["dot1", "dot2", "dot3", "dot4"]
 var autoNexttimer;
 showSlides(1, 0);
 showSlides(1, 1);
 showSlides(1, 2);
-autoNexttimer=setTimeout(autoNext, 2000);
+showSlides(1, 3);
+autoNexttimer=setTimeout(autoNext, 4000);
 
 function autoNext() {
 	plusSlides(1, 0);
 	plusSlides(1, 1);
 	plusSlides(1, 2);
+	plusSlides(1, 3);
 	clearTimeout(autoNexttimer);
 	autoNexttimer=setTimeout(autoNext, 4000);
 }
@@ -31,8 +33,8 @@ function pause()
 
 function plusSlides(n, no) {
   showSlides(slideIndex[no] += n, no);
-  clearTimeout(autoNexttimer);
-  autoNexttimer=setTimeout(autoNext, 20000);
+//  clearTimeout(autoNexttimer);
+//  autoNexttimer=setTimeout(autoNext, 20000);
 }
 
 function currentSlide(n, no) {
@@ -51,6 +53,7 @@ function showSlides(n, no) {
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  x[slideIndex[no]-1].style.display = "block";  
+ // console.log(no + " " + slideIndex[no]);
+  x[slideIndex[no]-1].style.display = "block"; 
   dots[slideIndex[no]-1].className += " active";
 }

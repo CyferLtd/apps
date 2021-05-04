@@ -74,6 +74,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle page-scroll" href="#apps" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">APPS</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#imev"><span class="item-text">IM Export Chat</span></a>
+                            <div class="dropdown-items-divide-hr"></div>
                             <a class="dropdown-item" href="#zoetic"><span class="item-text">ZOETIC</span></a>
                             <div class="dropdown-items-divide-hr"></div>
                             <a class="dropdown-item" href="#vpncheckandact"><span class="item-text">VPN CHECK AND ACT</span></a>
@@ -165,6 +167,103 @@
 
 
     <!-- APPS -->
+	<!-- when adding a new app, the slideshow  functionality needs changes made to css/slideshow.css and js/slideshow.js with a new dotX and mysSlidesX -->
+	
+	   <div id="imev" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2>Instant Messenger Export Viewer</h2>
+                        <p>Export and view WhatsApp, WeChat and KakaoTalk chats as HTML documents</p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">WhatsApp, WeChat and KakaoTalk provide chat export functions but only as collections of individual files. This means it is very difficult, without Instant Messenger Export Viewer, to view the chat in its original form.</div>
+                            </li>
+							<li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">The instant messenger servers do not host chat media indefinitely. You should back it up (export it) frequently.</div>
+                            </li>
+							<li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">A single chat can be very large (gigabytes) especially if it contains a large amount of media. Instant Messenger Export Viewer provides functions to facilitate the viewing and sharing to other apps of such large chats.</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Instant message conversations often contain sensitive information, for this reason the app contains no advertisements and does not ask for permissions such as access to your contacts.</div>
+                            </li>
+							<li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Instant Messenger Export Viewer. is not affiliated with, nor endorsed by, Kakao, WhatsApp or Tencent (WeChat).</div>
+                            </li>
+                        </ul>
+						<a href="https://play.google.com/store/apps/details?id=uk.cyferltd.imevgooglelite"><img src="images/googlestore.png" alt="alternative"  width="100"></a>
+						<a href="https://appgallery1.huawei.com/#/app/C100841611"><img src="images/huaweistore.png" alt="alternative"  width="100"></a>
+						<a href="https://apps.samsung.com/appquery/appDetail.as?appId=uk.cyferltd.imevsamsunglite"><img src="images/galaxystore.png" alt="alternative"  width="100"></a>
+						<a href="https://www.amazon.com/dp/B093ZVFGXG/qid=1620141823"><img src="images/amazonstore.png" alt="alternative"  width="100"></a>
+
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+				<div class="col-lg-6">
+					<br><br><br>
+					<div class="slideshow-container" onclick="pause()" >
+						<div class="mySlides4 fadeslideshow">
+						  <div class="numbertext"></div>
+						  <img src="images/imevscreenshots/s1.png" style="width:100%">
+						  <div class="text" style="color:blue; background-color:rgba(255, 255, 255, 0.8);">Processing KakaoTalk, WeChat and WhatsApp chats</div>
+						</div>
+
+						<div class="mySlides4 fadeslideshow">
+						  <div class="numbertext"></div>
+						  <img src="images/imevscreenshots/s2.png" style="width:100%">
+						  <div class="text" style="color:blue; background-color:rgba(255, 255, 255, 0.8);">Viewing a chat in a browser</div>
+						</div>
+
+
+						<div class="mySlides4 fadeslideshow">
+						  <div class="numbertext"></div>
+						  <img src="images/imevscreenshots/s3.png" style="width:100%" >
+						  <div class="text" style="color:blue; background-color:rgba(255, 255, 255, 0.8);">Viewing a chat in a browser</div>
+						</div>
+
+						<a class="prev" onclick="plusSlides(-1,3)">&#10094;</a>
+						<a class="next" onclick="plusSlides(1,3)">&#10095;</a>
+
+					</div>
+					<br>
+
+					<div style="text-align:center">
+					  <span class="dot4" onclick="currentSlide(1,3)"></span> 
+					  <span class="dot4" onclick="currentSlide(2,3)"></span> 
+					  <span class="dot4" onclick="currentSlide(3,3)"></span> 
+					</div>
+				<!--
+                    <div class="image-container">
+                        <img class="img-fluid" src="images/details.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+			</div>	
+                
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of details -->
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     <div id="zoetic" class="basic-1">
         <div class="container">
             <div class="row">
@@ -206,14 +305,8 @@
 						<img src="images/appstore.png" alt="alternative" width="100"></a>
 						<a href="https://play.google.com/store/apps/details?id=uk.cyferltd.zoetic"><img src="images/googlestore.png" alt="alternative"  width="100"></a>
 						<a href="https://appgallery1.huawei.com/#/app/C100841611"><img src="images/huaweistore.png" alt="alternative"  width="100"></a>
-						<div class="popup" onclick="myFunction('zoeticsamsung')">
-							<span class="popuptext" id="zoeticsamsung">Download via Galaxy app</span>
-							<img src="images/galaxystore.png" alt="alternative"  width="100">
-						</div>
-						<div class="popup" onclick="myFunction('zoeticamazon')">
-							<span class="popuptext" id="zoeticamazon">Download via Amazon app</span>
-							<img src="images/amazonstore.png" alt="alternative"  width="100">
-						</div> 
+						<a href="https://galaxystore.samsung.com/detail/uk.cyferltd.zoeticsamsung"><img src="images/galaxystore.png" alt="alternative"  width="100"></a>
+						<a href="https://www.amazon.com/Cyfer-Ltd-Zoetic/dp/B07SJHZ2N3/qid=1620142207"><img src="images/amazonstore.png" alt="alternative"  width="100"></a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
 				<div class="col-lg-6">
@@ -245,7 +338,7 @@
 						</div>
 						<div class="mySlides1 fadeslideshow">
 						  <div class="numbertext"></div>
-						  <img src="images/zoeticscreenshots/musicsync_landscape.jpg" style="width:100%">
+						  <img src="images/zoeticscreenshots/musicsync_landscape.png" style="width:100%">
 						  <div class="text" style="color:black; background-color:rgba(255, 255, 255, 0.8);">Syncing video transitions to a music track</div>
 						</div>
 						<div class="mySlides1 fadeslideshow">
@@ -266,6 +359,7 @@
 					  <span class="dot1" onclick="currentSlide(3,0)"></span> 
 					  <span class="dot1" onclick="currentSlide(4,0)"></span>
 					  <span class="dot1" onclick="currentSlide(5,0)"></span>
+					  <span class="dot1" onclick="currentSlide(6,0)"></span>
 					</div>
 				<!--
                     <div class="image-container">

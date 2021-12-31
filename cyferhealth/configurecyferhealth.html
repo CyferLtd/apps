@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi Fit Install</title>
+<style>
+p {
+  font-size: 22px;
+}
+ul {
+  font-size: 22px;
+}
+</style>
+</head>
+
+<body>
+<h2>Configuring the Cyfer Health app</h2>
+<p>Cyfer Health uses GMail to communicate. Whilst, any GMail account could be used, it is best to create a dedicated GMail account for Cyfer Health. (Using a dedicated account removes any concerns around privacy and possible bugs that might alter/delete emails in an existing GMail account.) Create such an account, choose Two Factor Authentication, and create an application specific password to be used by Cyfer Health. Detailed steps showing how to do this can be found <a href="gmailsetup.html">here</a></p>
+<p>Once you have the GMail information, start the Cyfer Health app. You should be taken to the settings screen. If not, or you have a need to make changes at a later date, tap the gear icon in the top right corner.</p>
+<p>First, specify whether you will be running Cyfer Health in stand-alone mode. If the app will be running at part of an organisation-wide Cyfer Health installation with a central Cyfer Health email address then make sure stand-alone mode is not enabled. If you will be running Cyfer Health with just one person being monitored and with one or more individuals receiving the alerts, make sure stand-alone mode is selected.</p>
+<img style="margin:20px 20px 60px;border:2px solid black;width:30%" src="settingsnotstandalone.png" alt="Family" >
+<img style="margin:20px 20px 60px;border:2px solid black;width:30%" src="standalonesettings.png" alt="Family" >
+<p>Now, depending on the mode of operation, enter the following information:</p>
+<h2>Not running in stand-alone mode</h2>
+<ul style="font-size:20">
+<li>The name of the person wearing the band and whose health is to be monitored. (This can have any value.)
+<li>The GMail email address that you have just created.
+<li>The GMail app password that you have just created. (Make sure you enter the app password and not the GMail account password.)
+<li>The email address of the Cyfer Health server.
+<li>Optionally, any email addresses of recipients who wish to receive daily health summaries and alerts. (Seperate multiple addresses with a comma.) This is optional, because alerts will also be received by anyone with access to the Cyfer Health monitoring app.
+<li>Select the required heart rate values (high and low) that specify when an alert should be raised to the above optional addresses. (There is more granularity of alert setting within the Cyfer Health Monitor app.)
+<li>Identify the band that is to be monitored by tapping its entry in the list of all the currently detected Bluetooth devices. The band's entry in the list will become bold. If you select the wrong entry, just tap the correct one.
+</ul> 
+<h2>Stand-alone mode</h2>
+<ul style="font-size:20">
+<li>The name of the person wearing the band and whose health is to be monitored. (This can have any value.)
+<li>The GMail email address that you have just created.
+<li>The GMail app password that you have just created. (Make sure you enter the app password and not the GMail account password.)
+<li>The email addresses of the recipients of the daily health summaries and  alerts. (Seperate multiple addresses with a comma.)
+<li>Select the required heart rate values (high and low) that specify when an alert should be raised.
+<li>Identify the band that is to be monitored by tapping its entry in the list of all the currently detected Bluetooth devices. The band's entry in the list will become bold. If you select the wrong entry, just tap the correct one.
+</ul> 
+<p>By tapping the padlock icon at the top of the screen, it is possible to lock this settings screen so that the settings can't be changed. If this restriction is desired, tap the padlock and specify a 4 digit pin that will be required to re-enter this screen. If you ever wish to remove the lock, enter the pin: <em>0000</em>.</p>
+<p>Tap the checkbox at the top of the screen to test the settings. Whenever you change any of the email related settings, you will be required to initiate this test before leaving the settings screen.</p>
+<p>To exit the app and stop monitoring the band, tap the red power button.</p>
+<h2>Android configuration</h2>
+<p>Depending on which version of Android you are using and how it is configured, you may find that Cyfer Health gets terminated after a few hours of use. To prevent this, go into Android's app settings, find the entry for Cyfer Health and turn off battery optimisation.</p>
+</body>
+</html>

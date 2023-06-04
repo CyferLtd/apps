@@ -1,11 +1,12 @@
-var slideIndex = [1,1,1,1];
-var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4"]
-var dotId = ["dot1", "dot2", "dot3", "dot4"]
+var slideIndex = [1,1,1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3", "mySlides4", "mySlides5"]
+var dotId = ["dot1", "dot2", "dot3", "dot4", "dot5"]
 var autoNexttimer;
 showSlides(1, 0);
 showSlides(1, 1);
 showSlides(1, 2);
 showSlides(1, 3);
+showSlides(1, 4);
 autoNexttimer=setTimeout(autoNext, 4000);
 
 function autoNext() {
@@ -13,6 +14,7 @@ function autoNext() {
 	plusSlides(1, 1);
 	plusSlides(1, 2);
 	plusSlides(1, 3);
+	plusSlides(1, 4);
 	clearTimeout(autoNexttimer);
 	autoNexttimer=setTimeout(autoNext, 4000);
 }

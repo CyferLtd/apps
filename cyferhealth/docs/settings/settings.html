@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<title>Zoetic Settings page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" href="../zoeticicon.png"/>
+    <!--[if lte IE 8]><link rel="stylesheet" href="../responsive-nav.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="../styles.css"><!--<![endif]-->
+    <script src="../responsive-nav.js"></script>
+
+<style>
+#settingstable tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#settingstable table, #settingstable th, #settingstable td {
+  border: 1px solid black;
+}
+</style>
+<body>
+<script src="../nav.js"></script>
+
+<div id="settingstable">
+<h2>Settings</h2>
+
+<p>The settings and commands available on the Settings page.</p>
+
+<h3>Video creation</h3>
+<table style="width:100%">
+
+<tr>
+<td>Number of intermediate images</td>
+<td>Number of images to generate between each real image. The greater the number, the smoother the video.</td>
+</tr>
+<tr>
+<td>Use Relative Number of Intermediates <i>To be added in next Zoetic release</i></td>
+<td>Distribute the generated intermediate images, specified above, relative to the periods between successive images.  The longer the period between successive images, the greater the number of intermediate images. This results in the passage of time in the video reflecting the dates of the images.  For example, for a project using a value of 20 for 'number of intermediate images' and with three images: image1 (1 Jan 2000), image2 (2 Jan 2000), image3 (4 Jan 2000); the intermediate images would be distributed as follows: image1 [1*20/3=7 intermediate images] image2 [2*20/3=13 intermediate images] image3. This is because there is one day between image1 and image2, and 2 days between image2 and image3. (All images must be dated and sorted for this function to work.)
+<p>
+A video showing the result of using this function can be found on <A href="https://youtu.be/P2qOTwkilZ0" style=" color: blue">YouTube</a> or on <A href="https://www.bilibili.com/video/BV1Zz4y167Cy" style=" color: blue">Bilibili</a>.
+</p>
+</td>
+</tr> 
+<tr>
+<td>Music sync</td>
+<td>Rather than use a set number of intermediate images or a relative number of intermediates (the previous two options), the number of intermediate images is automatically set to synchronise with a music track.</td>
+</tr>
+<tr>
+<td>Shift video start</td>
+<td>When using the music sync function, you may find that the images appear slightly (a fraction of a second) before or after the beats. If this is the case, you can advance the images by selecting a negative number of seconds and delay the images by selecting a positive number of seconds.</td>
+</tr>
+<tr>
+<td>Frames Per Second (FPS)</td>
+<td>Speed of the generated video. The greater the number, the smoother the video. The length of the video will be: 'Num of images' x 'Num of intermediate images' / FPS.</td>
+</tr>
+<tr>
+<td>Maximum output image resolution</td>
+<td>Output with greater height or width will be sampled to the specified value. <b>(Pro only and Simple Mode off)</b></td>
+</tr>
+<tr>
+<td>Megabits per second</td>
+<td>Higher values improve quality of the video but also increase the file size. <b>(Pro only and Simple Mode off)</b></td>
+</tr>
+<tr>
+<td>Image background colour</td>
+<td>Specify colour to use to fill any exposed background when the crop is not fully covered by an image. <b>(Pro only and Simple Mode off)</b></td>
+</tr>
+<tr>
+<td>Fill exposed crop</td>
+<td>Approach to filling any exposed background when the crop is not fully covered by an image. Options:
+<br>
+Do nothing - just fill with the colour specified above<br>
+Bleed edges - replicate the colours from around the edge of the exposed area<br>
+Prev image - copy the relevant area from the previous image<br>
+Zoom image - magnify the current image so that the crop is fully covered<br>
+Note that usually none of these options gives an ideal solution unless the areas to be covered are small therefore it is always best to try and set the crop so that it is covered by all the images.<br>
+<p>A video demonstrating the different approaches can be found on <A href="https://youtu.be/3gOZvn5zp_8" style=" color: blue">YouTube</a> or on <A href="https://www.bilibili.com/video/BV1hA411s72K" style=" color: blue">Bilibili</a>.</p>
+<b>(Pro only and Simple Mode off)</b></td>
+</tr>
+<tr>
+<td>Pause at start</td>
+<td>Number of seconds to show the first image to act as an intro to the video. <b>(Pro only)</b></td>
+</tr>
+<tr>
+<td>Pause at end</td>
+<td>Number of seconds to show the last image to act as an outro to the video. <b>(Pro only)</b></td>
+</tr>
+<tr>
+<td>Add start and end pause</td>
+<td>Show first and last images for one second to act as intro and outro to the video. <b>(Non-pro version only)</b></td>
+</tr>
+<tr>
+<td>Filter to use when combining images</td>
+<td>Specifies how the two images being transitioned between should be combined. Options: <br>
+Original - more weight to original images. This will produce an effect where the original (real) images are given more prominence.<br>
+Equal - equal weighting. This will produce an effect where the transition might be deemed to be more continuous but the video will give an equal prominence to the real and unreal (computer generated) images.<br>
+<p>A video comparing the two filters can be found on <A href="https://youtu.be/xAFE7Ge2RF8" style=" color: blue">YouTube</a> or on <A href="https://www.bilibili.com/video/BV1gZ4y137we" style=" color: blue">Bilibili</a>.</p>
+</td>
+</tr>
+<tr>
+<td>Subtitle video</td>
+<td>Produce subtitles by displaying the image dates. The subtitles can be written either as an external .srt file or 'burnt' into the video. <b>(Pro only)</b></td>
+</tr>
+<tr>
+<td>Only show year</td>
+<td>Subtitles will only display the date's year, not the full date. <b>(Pro only)</b></td>
+</tr>
+<tr>
+<td>Only process images that completely cover the crop</td>
+<td>Only process images where the crop is fully covered by the image. If not set, some background may be visible in the video in which case you may wish to investigate the above "Fill exposed crop" setting. <b>(Pro only and Simple Mode off)</b></td>
+</tr>
+<tr>
+<td>Number of blank frames at start of video</td>
+<td>Useful for syncing the start of the video with another video. This is very unlikely to be useful to most users. <b>(Pro only and Simple Mode off)</b> </td>
+</tr>
+<tr>
+<td>Show image numbers</td>
+<td>Adds the image position numbers to the generated video. For projects with a large number of images or very similar images, it can be difficult to relate a problem portion of the generated video with the corresponding images. Knowing the image numbers makes identifying the images in the Sort view more straightforward.</td>
+</tr>
+<tr>
+<td>Folder to save video</td>
+<td>The videos generated can be saved either to a folder local to the Zoetic app or to the global Movie folder.</td>
+</tr>
+</table>
+
+<h3>Images</h3>
+<table style="width:100%">
+
+<tr>
+<td>Order by date</td>
+<td>Use images' dates rather than the order the images were added to the project for sorting. The sort is implemented by tapping the sort buttons in the Sort screen.</td>
+</tr>
+<tr>
+<td>Draw image borders</td>
+<td>Draw borders around images in the composite image. This has no effect on the generated videos but showing borders may help in defining the crop.</td>
+</tr>
+<tr>
+<td>Maximum input image resolution</td>
+<td>Images with greater height or width will be sampled to the specified value. Allowing the use of large images may create out of memory problems. <b>(Only Pro and Simple Mode off)</b></td>
+</tr>
+<tr>
+<td>Warn when image resolution is reduced</td>
+<td>A warning will be displayed when images imported into a project have been reduced in size. The warning will only be displayed if the reduction took place due to the above user specified resolution limitation or, if using the non-Pro version of Zoetic, when the hard resolution limit is exceeded.</td>
+</tr>
+</table>
+<h3>Marking</h3>
+<table style="width:100%">
+<tr>
+<td>Hide face/eye detect function</td>
+<td>All face/eye detection takes place on the user's device (i.e. images are not sent across any network) but to address any concern that Google (or any other organisation) may process images the function can be hidden and hence not accidentally activated.</td>
+</tr>
+<tr>
+<td>Remember view between images</td>
+<td>Maintain the marking view's zoom and position between images.</td>
+</tr>
+<tr>
+<td>Pre-aligned mode</td>
+<td>Assume all images are already aligned and hence don't need marking.</td>
+</tr>
+</table>
+<h3>Camera</h3>
+<table style="width:100%">
+
+<tr>
+<td>Camera resolution</td>
+<td>The resolution to use when using Zoetic's camera function. <b>(Pro only)</b></td>
+</tr>
+<tr>
+<td>Backup photos</td>
+<td>Copy photos taken by the camera to the DCIM/Camera folder. This allows for other apps to use the photos. <b>(Pro only)</b></td>
+</tr>
+</table>
+<h3>Misc</h3>
+<table style="width:100%">
+
+<tr>
+<td>Simple Mode</td>
+<td>Hide the more advanced features of Zoetic Pro. Switching between on and off will reset some of the current project's settings. <b>(Pro only)</b></td>
+</tr>
+<tr>
+<td>Process sub-projects</td>
+<td>Treat projects with numerically consecutive names as sub-projects of the first project in the sequence. Please see the Sub-projects section of Zoetic's help for more information. <b>(Pro only and Simple Mode off)</b></td>
+</tr>
+<tr>
+<td>Use external player</td>
+<td>If selected, the default external media player will be used to play videos. If not selected, Zoetic's internal media player will be used. The internal media player may have fewer advanced features compared to an external player.</td>
+</tr>
+<tr>
+<td>Tap to share log</td>
+<td>Use to share Zoetic logs with Zoetic's author (for debugging) or anyone else.</td>
+</tr>
+<tr>
+<td>Tap to set default values</td>
+<td>Reset to default values.</td>
+</tr>
+<tr>
+<td>Tap to reset all warning and guidance messages</td>
+<td>Revert to the state when Zoetic was first installed.</td>
+</tr>
+<tr>
+<td>Tap to rate Zoetic</td>
+<td></td>
+</tr>
+<tr>
+<td>Tap to go to Zoetic's YouTube channel</td>
+<td></td>
+</tr>
+<tr>
+<td>About Zoetic</td>
+<td>Acknowledgements and a link to other apps from Cyfer Ltd.</td>
+</tr>
+</table>
+</div>
+
+<pre>
+
+</pre>
+
+<table style="width:100%;background-color: lightgrey;  background-position: center; table-layout: fixed;">
+<tr>
+<th><A href="javascript:window.history.back();" style=" color: blue">Back</a></th>
+<th><a href="../furtherdiscussion/furtherdiscussion.html" style=" color: blue">Further discussion</a></th>
+</tr>
+</table>
+
+    <script>
+      var navigation = responsiveNav("#nav", {customToggle: ".nav-toggle"});
+    </script>
+</body>
+</html>

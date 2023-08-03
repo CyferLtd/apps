@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Cyfer Health Monitor</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" href="./appicon.png">
+    <!--[if lte IE 8]><link rel="stylesheet" href="../responsive-nav.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="../styles.css"><!--<![endif]-->
+
+
+<style>
+#settingstable tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#settingstable table, #settingstable th, #settingstable td {
+  border: 1px solid black;
+}
+</style>
+<body>
+<script src="../nav.js"></script>
+<script src="include.js"></script>
+<h1>Cyfer Health Monitor</h1>
+<h3>Cyfer Health's Document Terminology</h3>
+<p><i>Patient</i> is the person being looked after. Unless you are a professional carer you probably don't think of this person as a 'patient' but instead they are a relative or a friend to whom you are responsible for their welfare.</p>
+<p><i>Carer</i> is the person looking after the <i>patient</i>. This documentation assumes that the reader is the <i>Carer</i> so when 'you' is used, it is referring to the role of the <i>Carer</i>.</p>
+<p>There will often be more than one <i>Carer</i>, e.g. siblings looking after a parent; and within a health care organisation there is likely to be a large number of <i>Carers</i>. Likewise, within such a care organisation, there are likely to be a large number of <i>Patients</i>.</p>
+<div id="settingstable">
+<div w3-include1-html="dummy"></div>
+<p></p>
+<h3>Commands specific to a patient card</h3>
+<h4>Tapping the text or photo of a card</h4>
+<table style="width:100%">
+<tr>
+<td>Remove</td>
+<td>Completely removes the patient from the Monitor. However, if a new reading is received from the patient, the card will reappear.</td>
+</tr> 
+<tr>
+<td>Hide</td>
+<td>Temporarily hide the card.</td>
+</tr> 
+<tr>
+<td>Photo</td>
+<td>Assign a photo to the patient. If the Cyfer Health system has more than one Monitor, the patient's photo will be sent to all Monitors.</td>
+</tr> 
+<tr>
+<td>Readings</td>
+<td>Request files from the patient's device containing the latest readings. The csv file that will be received, contains two columns. The first is a number recognised by Excel as a date and time. For Excel to interpret the value correctly, Excel must format the column as a date and time. The second number, is the corresponding heart rate. An XY Scatter with Straight Lines is a reasonable chart type to visualise the data.</td>
+</tr> 
+<tr>
+<td>Log</td>
+<td>Request the debug log from the patient's device. This should only be used by the app developer.</td>
+</tr> 
+<tr>
+<td>Restart</td>
+<td>Restart the patient's Cyfer Health Client app. It takes about a minute for the app to restart. Using this command shouldn't be necessary.</td>
+</tr> 
+</table>
+<h4>Tapping the chart of a card. (The chart will change colour indicating it has been selected. After a few seconds of inactivity, it will revert to its unselected state.)</h4>
+<table style="width:100%">
+<tr>
+<td><i class="fa fa-search-plus"><i class="fa fa-search-minus"></td>
+<td>The chart will continue to zoom in or out until the magnifying glass has been released.</td>
+</tr> 
+<td>Drag the chart left or right</td>
+<td>If the chart is dragged all the way to right (i.e. so the most recent reading is displayed) a feint yellow vertical bar will be shown against the chart's y-axis. This indicates that the chart has been set to show the latest readings rather than remain stationary.</td>
+</tr> 
+</table>
+<a id="alerts"></a>
+<h2>Configuring Alerts</h2>
+<p>Alerts are actions that are initiated when a heart rate falls outside of predefined values or if the monitoring connection to a patient is lost. There can be multiple actions assigned to these events. The actions can be: </p>
+<ol>
+<li>a notification on the device running Cyfer Health Monitor,</li>
+<li>sounding an alarm on that device or </li>
+<li>sending an email to a list of predefined email addresses .</li>
+</ol>
+<p>On the alerts configuration page, accessed via the three vertical dots menu, there are three sections, one for defining a Warning heart rate event, a Serious heart rate event and a Connection lost event. Actions can be assigned as required to these three sections. It is likely you will need to run the system for a few days to determine what values are usual for your patients, including whether the health device is able to reliably record their heart beats. You may find that a patient takes off the health band, to wash for example, and then often forgets to put it on again. Or, a patient, wears the band too lose to reliably get a reading.</p>
+<p>An example configuration:</p>
+<ul>
+<li>In the Warning section, set low heart rate to 40 and high heart rate to 140. Action #1 is set to send an email to Carers: John, Mary, Jane.</li>
+<li>In the Serious section, set low heart rate to 35 and high heart rate to 160. Action #1 is set to send an email to Carers: John, Mary, Jane, Sue. Action #2 is to sound the alarm.</li>
+<li>In the lost Connection section, no actions set.</li>
+</ul>
+<p>Finally, you may find it unnecessary to define any actions. Just having the ability to periodically glance at the Monitor to assure yourself everything looks normal may be sufficient. To help with the at-a-glance assessment, the heart rate values of Warning and Serious alerts are also reflected within the Monitor's user interface by changing the colour of the patient cards. If a patient's heart rate is normal (i.e. outside the ranges of Warning and Serious), the card is white. If the patient's heart rate is within the Warning range, it is coloured yellow. If the heart rate is within the Serious range, it is coloured red. If the connection has been lost (i.e. no reading has been for an extended period), the card becomes grey.</p>
+<a id="settings"></a>
+<h2>Settings</h2>
+
+<table style="width:100%">
+<tr>
+<td>Your company name</td>
+<td>This is the title that appears at the top of the main Monitor page.</td>
+</tr> 
+<tr>
+<td>Your Cyfer Health email address</td>
+<td>This is the one unique GMail email address used by all the Cyfer Health Monitors. The address is used by Monitor to communicate with Cyfer Health Client and Cyfer Health Alert apps, and to email alerts and other messages to Carers. (This email address should be dedicated to this purpose and not shared with any other use.) When setting a new Cyfer Health system, generally, you should create a new Google account and then use the email address associated with that new account here.</td>
+</tr>
+<tr>
+<td>Your Cyfer Health email password</td>
+<td>The app password associated with the above Cyfer Health Monitor email address. This is not the Google account password! The app password is generated from within the Security settings page of the Google account. See here for more info XXXXXXXXXXX</td>
+</tr>
+<tr>
+<td>Your company name the the client apps</td>
+<td>This is the name that you would like to appear within the Cyfer Health Client app.</td>
+</tr>
+<tr>
+<td>License key</td>
+<td>Copy here the license key (a long series of characters) that Cyfer Ltd will have email to you.</td>
+</tr>
+</table>
+
+</div>
+
+<pre>
+
+</pre>
+
+<script>
+var queryString = decodeURIComponent(window.location.search); //parsing 
+queryString = queryString.substring(1); 
+var queries = queryString.split("&"); 
+includeHTML3(queries[0], queries[1]);
+</script>
+</body>
+</html>

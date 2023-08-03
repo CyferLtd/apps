@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Cyfer Health Client Advanced Settings page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="icon" type="image/png" href="./appicon.png"/>
+    <!--[if lte IE 8]><link rel="stylesheet" href="../responsive-nav.css"><![endif]-->
+    <!--[if gt IE 8]><!--><link rel="stylesheet" href="../styles.css"><!--<![endif]-->
+    <script src="../responsive-nav.js"></script>
+
+<style>
+#settingstable tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#settingstable table, #settingstable th, #settingstable td {
+  border: 1px solid black;
+}
+</style>
+<body>
+<script src="../nav.js"></script>
+<h2>Cyfer Health Client Advanced Settings</h2>
+<h3>Introduction</h3>
+<p>If you are using a device that is supported 'out-of-the-box' by Cyfer Health Client, you shouldn't need to make any changes to this page. However if you are not using such a device, using this page, it may be possible to configure settings that allow your device to work. To do this, you will need a reasonable level of technical knowledge.</p>
+<p>The first thing to confirm is that your device exposes its <b>heart rate</b> readings to third-party apps via the BLE (Bluetooth Low Energy) protocol. If it doesn't, you won't be able to use your device.</p>
+<p>The second consideration is whether your device uses the standard Bluetooth numbering scheme to expose the <b>heart rate</b> and <b>battery</b> readings. If it does, then the default device settings (which will be automatically assigned to your device) will probably work without any changes. However, if your device has a <b>steps</b> monitor (and you wish to use it with Cyfer Health Client), you will probably still need to make changes to this page because usually the <b>steps</b> reading does not conform to the Bluetooth standard.</p>
+<p>If you have discovered that you need to make changes to get your device to work then use this page. This document does not describe the BLE specification nor how it works so you will need to use other sources of information. However, basically, the UUIDs in the following table are the commands Cyfer Health Client sends to your <b>heart rate</b> device; and the device provides a <b>Response</b> with the required information.</p>
+<p>When entering UUIDs, you are advised just to enter its short form, i.e. the four hexadecimal (hex) characters that make-up its unique part. You will probably only need to enter the full UUID for the <b>steps</b> measurement UUID, hence that text entry field is much larger than the other fields. (Cyfer Health Client will automatically determine if you entered a short form or complete UUID.)</p>
+<p>You can find part of the Bluetooth standard here 
+<a title="Bluetooth specification" href="https://btprodspecificationrefs.blob.core.windows.net/assigned-numbers/Assigned%20Number%20Types/Assigned_Numbers.pdf" style="color: rgb(0,0,255)">https://btprodspecificationrefs.blob.core.windows.net/assigned-numbers/Assigned%20Number%20Types/Assigned_Numbers.pdf</a>
+. However, if your device does not follow the standard you will need to either try to obtain documentation for your device or try debugging the BLE services it advertises using Android apps such as: LightBlue, BLE Scanner or nRF Connect.</p>
+<div id="settingstable">
+<h3>Settings</h3>
+
+<p>The settings and commands available on the Settings page.</p>
+
+<table style="width:100%">
+<tr>
+<td>Heart rate service</td>
+<td>The short form UUID.</td>
+</tr>
+<tr>
+<td>Heart rate measurement</td>
+<td>The short form UUID.</td>
+</tr>
+<tr>
+<td>Heart byte pos</td>
+<td>The byte position of the low order value of the heart rate. For example, if the <b>Response</b> consists of the following three bytes, and the value of the current heart rate reading is 43, you would enter 1 as the byte's position:
+<pre>
+Response: 00 43 00
+Byte pos: 0  1  2</pre></td>
+</tr>
+<tr>
+<td>Heart rate left match</td>
+<td>These are bytes that must match the start of the <b>Response</b> for the heart rate <b>Response</b> to be considered valid. For example, if the 'Heart rate left match' was set to 'fe0a' then the first of the following <b>Responses</b> would not match and hence be ignored, but the second would match and hence be processed.
+<pre>
+FE085661000FBA88
+FE0A55004E620FE4FF01</pre>
+</td>
+</tr>
+<tr>
+<td>Heart rate fast mode</td>
+<td>Most devices generate a heart rate reading with a frequency of once every several seconds to once every five minutes. If your device has a higher frequency than that, e.g. two readings per second, then turn-on this setting.</td>
+</tr> 
+<tr>
+<td>Battery service</td>
+<td>The short form UUID.</td>
+</tr>
+<tr>
+<td>Battery measurement</td>
+<td>The short form UUID.</td>
+</tr>
+<tr>
+<td>Battery byte pos</td>
+<td>The position of the byte in the <b>Response</b> with the battery value. For example, if the <b>Response</b> consists of the following two bytes, and the value of the current battery reading is 67, you would enter 0 as the byte's position:
+<pre>
+Response: 67 00
+Byte pos: 0  1</pre></td>
+</tr>
+<tr>
+<td>Steps service</td>
+<td>The short form UUID.</td>
+</tr>
+<tr>
+<td>Steps measurement</td>
+<td>The short form UUID.</td>
+</tr>
+<tr>
+<td>Steps low byte pos</td>
+<td>The position of the byte in the <b>Response</b> with the steps value. For example, if the <b>Response</b> consists of the following thirteen bytes, and the value of the current steps reading is 01D3, you would enter 1 as the least significant byte's (D3) position:
+<pre>
+Response: 0C D3 01 00 00 2C 01 00 00 08 00 00 00
+Byte pos: 0  1  2  3  4  5  6  7  8  9  10 11 12</pre></td>
+</tr>
+
+</table>
+
+</div>
+
+<pre>
+
+</pre>
+
+    <script>
+      var navigation = responsiveNav("#nav", {customToggle: ".nav-toggle"});
+    </script>
+</body>
+</html>

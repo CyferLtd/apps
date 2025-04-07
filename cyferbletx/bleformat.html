@@ -16,10 +16,29 @@ ul {
 </head>
 
 <body>
-<h2>Cyfer BLE Tx - BLE Format</h2>
-<h3>Introduction</h3>
-<p>Using your watch's Bluetooth capabilities (BLE), broadcast your heart rate to devices such as gym and medical equipment. The heart rate readings are transmitted using an open standard so should work with most equipment without any configuration. Just tap the app's On button (middle of the screen), accept all the permissions and you will be broadcasting your heart rate. (While you are wearing your watch!)
-Optionally,your step count and GPS location can be broadcast, however, this does not use open standards. See the Technical section, below, for further details.</p>
-<h3>Technical</h3>
-<p></p>
+<h1>Cyfer BLE Tx - BLE Format</h1>
+<h2>Introduction</h2>
+<p>Using your watch's Bluetooth capabilities (BLE), Cyfer BLE Tx broadcasts your heart rate to devices such as gym and medical equipment. The heart rate readings are transmitted using an open standard so should work with most equipment without any configuration. Just tap the app's On button (middle of the screen), accept all the permissions and you will be broadcasting your heart rate. (While you are wearing your watch!)</p>
+<p>Note that your watch's battery level is also broadcast.</p>
+<p>Optionally, your step count and GPS location can be broadcast, however, open standards for these readings do not exist so to detect these broadcasts will require specific Cyfer BLE Tx apps. See the BLE configuration section, below, for further details.</p>
+<p>Note that the steps counter will only count steps while the app is running, e.g. while you are doing exercise. This means the steps count will have a different value to your watch's build-in step counter which is usually configured to run continually.</p>
+<p>If you wish  to confirm that CyferBLE Tx is working correctly, you can install on your phone an app such as LightBlue or BLE Scanner (available for free on the Google Play Store).</p>
+<h2>BLE configuration</h2>
+<p>All data types presented below are Java data types</p>
+<p><b>Heart rate</b></p>
+<p>Service: 180d</p>
+<p>Measurement: 2a37</p>
+<p>Data format: 1xShort</p>
+<p><b>Battery level</b></p>
+<p>Service: 180f</p>
+<p>Measurement: 2a19</p>
+<p>Data format: 1xByte</p>
+<p><b>Steps</b></p>
+<p>Service: fee7</p>
+<p>Measurement: 2a19</p>
+<p>Data format: 1xShort</p>
+<p><b>GPS Location</b></p>
+<p>Service: 1860</p>
+<p>Measurement: 2c30</p>
+<p>Data format: 3xDouble (in the order of Latitude, Longiture, Altitude)</p>
 </html>
